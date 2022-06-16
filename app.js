@@ -64,12 +64,14 @@ const loadNow = (opacity) => {
     }
 };
 
+
 const displayContent = () => {
     loader.style.display = 'none';
     document.getElementById('content').style.display = 'block';
-}
+};
 
-document.addEventListener("DOMContentLoaded", function() {
+
+document.addEventListener("DOMContentLoaded", () => {
     loader = document.getElementById('loader');
     loadNow(1);
 });
