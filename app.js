@@ -3,8 +3,9 @@ const list = document.querySelector('.todos');
 const search = document.querySelector('.search input');
 
 
+
 const generateTemplate = todo => {
-    const html = `    
+    let html = `    
      <li class="list-group-item d-flex justify-content-between align-items-center">
     <span>${todo}</span>
     <i class="far fa-trash-alt delete"></i>
@@ -22,8 +23,12 @@ addForm.addEventListener('submit', e => {
     generateTemplate(todo);
     addForm.reset();
 
-    localStorage.setItem('todo', todo);
+    
+
+    localStorage.setItem('todo', JSON.stringify(todo));
     }
+    const stored = localStorage.getItem('todo');
+    console.log(JSON.parse(stored));
 });
 
 
